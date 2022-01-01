@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7b9f15dd-455d-472f-b0e0-5c984aa4f769" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="session-3Flow" doc:id="c1e350e8-04e7-4c0a-875a-88024bea5e47" >
+		<http:listener doc:name="Listener" doc:id="b5e736a7-76b8-4adf-8e3d-7f21dfcedd54" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value='#["Hello World"]' doc:name="Set Payload" doc:id="5168c072-12c4-442f-b5a4-492c7b8e269b" />
+	</flow>
+	<flow name="session-3Flow1" doc:id="a0c7fafc-577f-4066-a817-95fe7a828359" >
+		<http:listener doc:name="Listener" doc:id="8fc1958f-7f48-41a9-bc1e-62059d3100e9" config-ref="HTTP_Listener_config" path="/sports"/>
+		<set-payload value="News On Sport" doc:name="Set Payload" doc:id="9ba7620e-8261-4c98-aa58-ed54dff7604a" />
+	</flow>
+</mule>
