@@ -10,6 +10,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="session-3Flow" doc:id="c1e350e8-04e7-4c0a-875a-88024bea5e47" >
 		<http:listener doc:name="Listener" doc:id="b5e736a7-76b8-4adf-8e3d-7f21dfcedd54" config-ref="HTTP_Listener_config" path="/test"/>
 		<set-payload value='#["Hello World"]' doc:name="Set Payload" doc:id="5168c072-12c4-442f-b5a4-492c7b8e269b" />
+		<logger level="INFO" doc:name="Logger" doc:id="33ed1019-17a8-4938-9516-c3121eee3be2" message='#["changed in studio"]'/>
 	</flow>
 	<flow name="session-3Flow1" doc:id="a0c7fafc-577f-4066-a817-95fe7a828359" >
 		<http:listener doc:name="Listener" doc:id="8fc1958f-7f48-41a9-bc1e-62059d3100e9" config-ref="HTTP_Listener_config" path="/sports"/>
